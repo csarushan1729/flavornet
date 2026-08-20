@@ -170,7 +170,8 @@ flavornet/
 ├── requirements.txt
 └── README.md
 ```
-##Demo
+---
+## Demo
 
 
 https://github.com/user-attachments/assets/3611c322-61e6-437a-84b1-519471801c09
