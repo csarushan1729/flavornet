@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlavorNet</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="logo">◎</span>
+        <div>
+          <h1>FlavorNet</h1>
+          <p class="tagline">Culinary Knowledge Graph</p>
+        </div>
+      </div>
+      <div id="connection-status" class="status status--checking">Checking database…</div>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="hero">
+      <h2>Explore recipes through <em>connections</em></h2>
+      <p>
+        Discover substitutions, flavor pairings and multi-hop paths that a traditional database
+        would struggle to express. Powered by CognoDB.
+      </p>
+    </section>
+
+    <!-- Main controls -->
+    <section class="controls card">
+      <div class="control-group">
+        <label for="search-ingredient">Ingredient</label>
+        <input id="search-ingredient" type="text" placeholder="e.g. Butter, Garlic, Tofu…" />
+      </div>
+      <div class="control-group">
+        <label for="filter-cuisine">Cuisine</label>
+        <select id="filter-cuisine">
+          <option value="">Any cuisine</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="filter-dietary">Dietary</label>
+        <select id="filter-dietary">
+          <option value="">Any diet</option>
+        </select>
+      </div>
+      <div class="control-actions">
+        <button id="btn-search" class="btn btn--primary">Search Recipes</button>
+        <button id="btn-recommend" class="btn btn--secondary">Recommend via Substitutions</button>
+        <button id="btn-subs" class="btn btn--ghost">Find Substitutions</button>
+        <button id="btn-pairings" class="btn btn--ghost">Flavor Pairings</button>
+      </div>
+    </section>
+
+    <!-- Quick suggestions -->
+    <section class="suggestions" id="suggestions">
+      <span class="suggestions-label">Try:</span>
+      <div id="suggestion-chips" class="chips"></div>
+    </section>
+
+    <!-- Results area -->
+    <main class="results">
+      <div id="loading" class="state state--loading hidden">
+        <div class="spinner"></div>
+        <p>Traversing the graph…</p>
+      </div>
+
+      <div id="empty" class="state state--empty">
+        <p>Search for an ingredient or choose a filter to explore the culinary graph.</p>
+      </div>
+
+      <div id="error" class="state state--error hidden">
+        <p id="error-message">Something went wrong.</p>
+        <button id="btn-retry" class="btn btn--ghost">Retry</button>
+      </div>
+
+      <div id="results-list" class="results-grid hidden"></div>
+    </main>
+
+    <!-- Recipe detail modal -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-content card">
+        <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Built with CognoDB · openCypher · FastAPI</p>
+      <p class="footer-note">Graph data model makes multi-hop substitutions & pairings first-class.</p>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
