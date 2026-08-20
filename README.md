@@ -171,7 +171,9 @@ flavornet/
 └── README.md
 ```
 ---
-## Demo
+## Live Demo
+- **Live App**: https://flavornet-production.up.railway.app
+- **Demo Video**:
 
 
 https://github.com/user-attachments/assets/3611c322-61e6-437a-84b1-519471801c09
