@@ -1,4 +1,4 @@
-# FlavorNet — Culinary Knowledge Graph
+# FlavorNet: Culinary Knowledge Graph
 
 A complete web application backed by **CognoDB** (a managed graph database that speaks openCypher over Bolt).  
 FlavorNet lets anyone explore recipes through *connections*: ingredient substitutions, multi-hop substitution paths, flavor pairings, cuisines and dietary constraints.
@@ -170,28 +170,11 @@ flavornet/
 ├── requirements.txt
 └── README.md
 ```
+##Demo
 
----
 
-## Hosting the demo
+https://github.com/user-attachments/assets/3611c322-61e6-437a-84b1-519471801c09
 
-Any free tier that can run a Python web process works:
-
-- **Render** / **Railway** / **Fly.io** – set the three env vars, run `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-- Keep your CognoDB free instance running so the live demo stays online.
-
-For the mandatory screen recording: open the deployed app, walk through search → substitutions → “Recommend via Substitutions” → open a recipe detail.
-
----
-
-## What a strong submission shows
-
-- Sound graph data modelling (this README’s “Why a graph database?” section)
-- Seed script that is idempotent and creates constraints
-- Multi-hop + relationally-awkward queries that are still readable
-- Polished UI with proper loading, empty and error states
-- Secrets never in the repository
-- Code you can defend line-by-line in a follow-up interview
 
 ---
 
